@@ -6,7 +6,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-
 RUN mkdir -p data
 
 ENV PORT=8080
@@ -14,4 +13,4 @@ ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "python startup.py && python run.py"]
+CMD ["sh", "-c", "python startup.py && gunicorn -b 0.0.0.0:$PORT run:app"]
