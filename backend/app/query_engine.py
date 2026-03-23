@@ -27,11 +27,18 @@ def _init_client():
     global _client
     if _client is not None:
         return _client
-    if not GROQ_API_KEY or GROQ_API_KEY == "your_groq_api_key_here":
+        
+    # FORCE read directly from Railway's system environment
+    import os
+    live_key = os.environ.get("GROQ_API_KEY")
+    
+    if not live_key or live_key == "your_groq_api_key_here":
+        print("[debug] API Key not found in system environment!")
         return None
+        
     try:
         from groq import Groq
-        _client = Groq(api_key=GROQ_API_KEY)
+        _client = Groq(api_key=live_key)
         return _client
     except Exception as e:
         print(f"[query_engine] Failed to init Groq client: {e}")
