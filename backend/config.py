@@ -2,9 +2,9 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Always load .env from the same folder as this file (absolute path)
+# Let server variables (Railway) take priority over local .env files
 BASE_DIR = Path(__file__).parent.resolve()
-load_dotenv(dotenv_path=BASE_DIR / ".env", override=True)
+load_dotenv(dotenv_path=BASE_DIR / ".env", override=False) 
 
 DATA_DIR = BASE_DIR / "data"
 
