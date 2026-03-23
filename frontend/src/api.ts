@@ -1,8 +1,7 @@
 import type { GraphData, NodeDetail, ChatResponse } from './types'
 
-// In development: VITE_API_URL is not set, falls back to /api (proxied by Vite)
-// In production on Vercel: VITE_API_URL = your Railway URL
-const BASE = import.meta.env.VITE_API_URL ?? '/api'
+// Hardcoded to point directly to your live Railway backend
+const BASE = 'https://sapo2cgraphintelligence-production.up.railway.app'
 
 export async function fetchGraph(): Promise<GraphData> {
   const res = await fetch(`${BASE}/graph`)
