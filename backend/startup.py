@@ -1,4 +1,4 @@
-import os, sys, subprocess
+import os, sys
 
 BASE     = os.path.dirname(__file__)
 DATA_DIR = os.path.join(BASE, "data")
@@ -8,19 +8,17 @@ CACHE    = os.path.join(DATA_DIR, "graph_cache.json")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 if not os.path.exists(DB_PATH):
-    print("[startup] database.db not found — running ingest.py ...")
+    print("[startup] No database.db found — running ingest...")
+    import subprocess
     r = subprocess.run([sys.executable, "scripts/ingest.py"], cwd=BASE)
     if r.returncode != 0:
-        print("[startup] ERROR: ingest.py failed")
-        sys.exit(1)
-    print("[startup] ingest.py complete")
+        print("[startup] ingest.py failed — continuing anyway")
 
 if not os.path.exists(CACHE):
-    print("[startup] graph_cache.json not found — running build_graph.py ...")
+    print("[startup] No graph_cache.json — running build_graph...")
+    import subprocess
     r = subprocess.run([sys.executable, "scripts/build_graph.py"], cwd=BASE)
     if r.returncode != 0:
-        print("[startup] ERROR: build_graph.py failed")
-        sys.exit(1)
-    print("[startup] build_graph.py complete")
+        print("[startup] build_graph.py failed — continuing anyway")
 
-print("[startup] All data ready.")
+print("[startup] Done.")

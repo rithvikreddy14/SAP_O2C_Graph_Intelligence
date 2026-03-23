@@ -9,6 +9,9 @@ COPY . .
 
 RUN mkdir -p data
 
+ENV PORT=8080
+ENV PYTHONUNBUFFERED=1
+
 EXPOSE 8080
 
-CMD ["sh", "-c", "python startup.py && python run.py"]git rm backend/nixpacks.toml
+CMD ["sh", "-c", "python startup.py && python run.py"]
