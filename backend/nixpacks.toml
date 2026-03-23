@@ -1,36 +1,10 @@
-[phases.build]
+providers = ["python"]
+
+[phases.setup]
+nixPkgs = ["python311", "python311Packages.pip"]
+
+[phases.install]
 cmds = ["pip install -r requirements.txt"]
 
-[phases.start]
+[start]
 cmd = "python startup.py && python run.py"
-
-[variables]
-PYTHONUNBUFFERED = "1"
-```
-
-**Step 3 — Verify your backend folder has all required files**
-
-Your `backend/` folder must contain all of these:
-```
-backend/
-  requirements.txt     ← must exist
-  Procfile             ← must exist (no extension)
-  runtime.txt          ← must exist
-  startup.py           ← must exist
-  run.py
-  nixpacks.toml        ← just created
-  app/
-  scripts/
-  data/
-```
-
-**Step 4 — Verify requirements.txt has everything**
-
-Open `backend/requirements.txt` and make sure it contains:
-```
-flask==3.0.2
-flask-cors==4.0.0
-networkx==3.2.1
-pandas==2.2.1
-groq==0.5.0
-python-dotenv==1.0.1
