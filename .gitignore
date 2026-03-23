@@ -1,0 +1,31 @@
+# ── Python virtual environment ──────────────────
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# ── Secrets — NEVER commit ──────────────────────
+.env
+*.env
+.env.local
+.env.production
+
+# ── Generated database files ─────────────────────
+# backend/data/database.db
+# backend/data/graph_cache.json
+
+# ── Node.js ──────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/build/
+
+# ── OS files ─────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
