@@ -1,6 +1,7 @@
 import type { GraphData, NodeDetail, ChatResponse } from './types'
 
-const BASE = import.meta.env.VITE_API_URL ?? '/api'
+// Paste your new Render URL here
+const BASE = 'https://sap-o2c-graph-intelligence.onrender.com'
 
 export async function fetchGraph(): Promise<GraphData> {
   const res = await fetch(`${BASE}/graph`)
