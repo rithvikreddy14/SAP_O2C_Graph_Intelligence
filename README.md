@@ -671,5 +671,3 @@ To deploy:
 
 ---
 
-*Built for the Forward Deployed Engineer assignment — SAP Order-to-Cash Graph Intelligence System.*
-*Deadline: 26 March 2026, 11:59 PM IST*
