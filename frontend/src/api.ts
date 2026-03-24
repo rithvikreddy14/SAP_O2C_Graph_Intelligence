@@ -1,7 +1,6 @@
 import type { GraphData, NodeDetail, ChatResponse } from './types'
 
-// Hardcoded to point directly to your live Railway backend
-const BASE = 'https://sapo2cgraphintelligence-production.up.railway.app'
+const BASE = import.meta.env.VITE_API_URL ?? '/api'
 
 export async function fetchGraph(): Promise<GraphData> {
   const res = await fetch(`${BASE}/graph`)
