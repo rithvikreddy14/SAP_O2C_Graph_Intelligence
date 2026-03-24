@@ -80,7 +80,7 @@ This is not a static dashboard or a Q&A chatbot. It is a live, queryable intelli
 
 ## 5. Dataset Description
 
-**Source:** `C:\Users\rithv\Downloads\sap-o2c-data`
+**Source:** *https://drive.google.com/file/d/1UqaLbFaveV-3MEuiUrzKydhKmkeC1iAL/view*
 **Format:** JSONL part files (multiple `part-*.jsonl` per table)
 **Total:** 19 tables, 21,393 rows, 3 MB SQLite database
 
