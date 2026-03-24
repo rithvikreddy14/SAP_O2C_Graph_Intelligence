@@ -441,7 +441,7 @@ sap-o2c-graph/
 - Python 3.11+
 - Node.js 18+
 - A free Groq API key from [console.groq.com](https://console.groq.com)
-- The SAP O2C dataset at `C:\Users\rithv\Downloads\sap-o2c-data`
+- The SAP O2C dataset at *https://drive.google.com/file/d/1UqaLbFaveV-3MEuiUrzKydhKmkeC1iAL/view*
 
 ### Step 1 — Backend setup
 
@@ -463,7 +463,7 @@ Edit `backend/.env`:
 
 ```env
 GROQ_API_KEY=gsk_your_key_here
-SOURCE_DATA=C:\Users\rithv\Downloads\sap-o2c-data
+SOURCE_DATA=https://drive.google.com/file/d/1UqaLbFaveV-3MEuiUrzKydhKmkeC1iAL/view
 DB_PATH=data/database.db
 GRAPH_CACHE=data/graph_cache.json
 MAX_GRAPH_NODES=3000
@@ -594,9 +594,9 @@ Every answer includes a collapsible SQL badge showing the exact query that was e
 
 ## 18. Demo Link
 
-> **Live demo:** *(Deploy to Railway + Vercel and add the URL here)*
+> **Live demo:** *https://sap-o2-c-graph-intelligence.vercel.app/*
 >
-> **GitHub repository:** *(Add your repository URL here)*
+> **GitHub repository:** *https://github.com/rithvikreddy14/SAP_O2C_Graph_Intelligence*
 
 To deploy:
 
